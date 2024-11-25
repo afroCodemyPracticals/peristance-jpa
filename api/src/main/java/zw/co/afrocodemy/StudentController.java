@@ -29,7 +29,6 @@ public class StudentController {
             @RequestBody StudentRequest studentRequest) {
         return ResponseEntity.ok(studentService.updateStudent(id, studentRequest));
     }
-
     @GetMapping("{id}")
     @Operation(description = "Get Student By Id")
     public ResponseEntity<Student> getStudent(@PathVariable Long id) {

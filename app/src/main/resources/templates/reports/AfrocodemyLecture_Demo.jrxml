@@ -1,0 +1,82 @@
+<!-- Created with Jaspersoft Studio version 7.0.1.final using JasperReports Library version 7.0.1-573496633c2b4074e32f433154b543003f7d2498  -->
+<jasperReport name="AfrocodemyLecture_Demo" language="java" pageWidth="595" pageHeight="842" whenNoDataType="NoDataSection" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c6dfbe33-28d8-45c9-92f3-d68b4e3e496d">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Reports_Demo_Afrocodemy"/>
+	<query language="SQL"><![CDATA[SELECT * FROM student]]></query>
+	<field name="id" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.name" value="id"/>
+		<property name="com.jaspersoft.studio.field.label" value="id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="student"/>
+	</field>
+	<field name="age" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.name" value="age"/>
+		<property name="com.jaspersoft.studio.field.label" value="age"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="student"/>
+	</field>
+	<field name="name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="name"/>
+		<property name="com.jaspersoft.studio.field.label" value="name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="student"/>
+	</field>
+	<group name="id">
+		<expression><![CDATA[$F{id}]]></expression>
+	</group>
+	<group name="age">
+		<expression><![CDATA[$F{age}]]></expression>
+	</group>
+	<group name="name">
+		<expression><![CDATA[$F{name}]]></expression>
+	</group>
+	<background splitType="Stretch"/>
+	<pageHeader height="97" splitType="Stretch">
+		<element kind="rectangle" uuid="d64124d8-445f-44d2-a38f-046cc47c3bfa" x="-20" y="0" width="595" height="97" backcolor="#412ED1"/>
+		<element kind="image" uuid="a9f24a12-6270-460d-8dc6-ed6f8728e48d" x="-20" y="0" width="190" height="97">
+			<expression><![CDATA["templates/reports/afrocodemy logo.jpeg"]]></expression>
+		</element>
+		<element kind="staticText" uuid="bf6ab4cf-f806-4ef1-bbd4-53327d23ad54" x="260" y="30" width="230" height="30" forecolor="#FFFFFF" backcolor="#FFFFFF" fontSize="16.0" bold="true">
+			<text><![CDATA[STUDENT REPORT]]></text>
+		</element>
+	</pageHeader>
+	<columnHeader height="60" splitType="Stretch">
+		<element kind="staticText" uuid="8b6287af-71e5-4034-b356-67cd5be264f9" x="0" y="30" width="278" height="30">
+			<text><![CDATA[age]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="165016d1-8a2d-4f5a-b23e-b06da5e867ef"/>
+		</element>
+		<element kind="staticText" uuid="4eb124d8-c3e2-45e9-abe1-be2d5d1748a2" x="278" y="30" width="277" height="30">
+			<text><![CDATA[name]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a801cef7-be14-4005-a8cc-41a29f94e0f9"/>
+		</element>
+	</columnHeader>
+	<detail>
+		<band height="30" splitType="Stretch">
+			<element kind="textField" uuid="a80c5b86-435d-43e7-bc66-9e49defed13c" x="0" y="0" width="278" height="30">
+				<expression><![CDATA[$F{age}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="165016d1-8a2d-4f5a-b23e-b06da5e867ef"/>
+			</element>
+			<element kind="textField" uuid="371aeace-2259-4e87-a0ff-6d400dba71ab" x="278" y="0" width="277" height="30">
+				<expression><![CDATA[$F{name}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a801cef7-be14-4005-a8cc-41a29f94e0f9"/>
+			</element>
+		</band>
+	</detail>
+	<pageFooter height="54" splitType="Stretch">
+		<element kind="textField" uuid="53bd26a0-83d8-473a-bd9a-ce5bb6f19218" x="180" y="12" width="100" height="30" hTextAlign="Right">
+			<expression><![CDATA["Page " + $V{PAGE_NUMBER}]]></expression>
+		</element>
+		<element kind="textField" uuid="c72ede41-3243-448a-9e67-999d78361647" x="280" y="10" width="100" height="30" evaluationTime="Report" hTextAlign="Left">
+			<expression><![CDATA[" of " + $V{PAGE_NUMBER}]]></expression>
+		</element>
+	</pageFooter>
+	<noData height="190">
+		<element kind="rectangle" uuid="3b020790-b033-4a4b-b5c8-ee3a97358023" x="-20" y="0" width="595" height="97" backcolor="#412ED1"/>
+		<element kind="image" uuid="c4208f1e-1560-45aa-a1d3-41e8d369cd5e" x="-20" y="0" width="190" height="97">
+			<expression><![CDATA["templates/reports/afrocodemy logo.jpeg"]]></expression>
+		</element>
+		<element kind="staticText" uuid="9313d0a6-0ef9-4555-8c05-c2c6a8b9d595" x="260" y="30" width="230" height="30" forecolor="#FFFFFF" backcolor="#FFFFFF" fontSize="16.0" bold="true">
+			<text><![CDATA[STUDENT REPORT]]></text>
+		</element>
+		<element kind="staticText" uuid="af1712e5-6b24-470a-9371-eeb862e4addc" x="182" y="140" width="190" height="28" forecolor="#FF0C08" fontSize="14.0" bold="true">
+			<text><![CDATA[NO DATA FOUND]]></text>
+		</element>
+	</noData>
+</jasperReport>

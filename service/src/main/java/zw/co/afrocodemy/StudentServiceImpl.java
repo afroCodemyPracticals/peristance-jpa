@@ -15,7 +15,7 @@ public class StudentServiceImpl implements StudentService {
     public Student createStudent(StudentRequest student) {
 
         Student newStudent = Student.builder()
-                .name(student.getName())
+                .nameOfStudent(student.getName())
                 .age(student.getAge())
                 .build();
 
@@ -28,20 +28,10 @@ public class StudentServiceImpl implements StudentService {
 
         var student = getStudentById(id);
 
-        student.setName(studentRequest.getName());
+        student.setNameOfStudent(studentRequest.getName());
         student.setAge(studentRequest.getAge());
 
         return studentRepository.save(student);
-//        Optional<Student> student = studentRepository
-//                .findById(id);
-//
-//        if (student.isPresent()) {
-//            student.get().setName(studentRequest.getName());
-//            student.get().setAge(studentRequest.getAge());
-//            studentRepository.save(student.get());
-//            return student.get();
-//        }
-//        throw new RuntimeException("Student Not Found!!");
     }
 
     @Override
@@ -50,13 +40,6 @@ public class StudentServiceImpl implements StudentService {
         var student = getStudentById(id);
 
         studentRepository.delete(student);
-
-//        Optional<Student> student = studentRepository.findById(id);
-//        if (student.isPresent()) {
-//            studentRepository.delete(student.get());
-//        }
-//
-//        return student.get();
         return null;
     }
 
@@ -65,11 +48,6 @@ public class StudentServiceImpl implements StudentService {
         return studentRepository.findById(id).orElseThrow(
                 () -> new RuntimeException("Student not found")
         );
-//        Optional<Student> student = studentRepository.findById(id);
-//        if (student.isPresent()) {
-//            return student.get();
-//        }
-//        throw new RuntimeException("Students Not Found!!");
     }
 
     @Override
